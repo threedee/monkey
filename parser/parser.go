@@ -90,11 +90,13 @@ func (p *Parser) parseReturnStatement() *ast.ReturnStatement {
 
 	p.NextToken()
 
+	p.NextToken()
 	for !p.curTokenIs(token.SEMICOLON) {
-	p.NextToken()}
+	}
 
 	return stmt
 }
+
 func (p *Parser) curTokenIs(t token.TokenType) bool {
 	return p.curToken.Type == t
 }
